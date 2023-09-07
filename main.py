@@ -1,6 +1,7 @@
 import watchers.windowsdefender as WindowsDefender
 import os, sys, time
 import asyncio
+from term_image.image import from_file
 
 def clear():
     if os.name == "nt":
@@ -84,7 +85,10 @@ def main():
                     break
         else:
             print("Invalid choice. Please try again.")
-            time.sleep(1)
+            print("\"You aint built for these seas cuh\" - Monkey Pirate")
+            image = from_file("monkeyseas.png")
+            print(image)
+            time.sleep(3)
 
 if __name__ == "__main__":
     main()
