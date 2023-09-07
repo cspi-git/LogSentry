@@ -2,7 +2,7 @@
 ## Install
 Download [Python](https://www.python.org/downloads/)
 
-Run `pip install asyncio`
+Run `pip install asyncio` and `pip install term-image`
 
 ## Usage
 `cd LogSentry`
