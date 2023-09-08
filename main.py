@@ -52,7 +52,7 @@ banner = f"""{colors.blue}{colors.bold}
                      ...::::::::::........::::::::::...                    
                            ....::::::::::::::....          
 {colors.reset}{colors.red}
-                      "The all seeing eye" - LogSentry                                                      
+                      "The all seeing eye." - LogSentry                                                      
 {colors.reset}"""
 
 def mon(key):
