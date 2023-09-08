@@ -1,4 +1,5 @@
 {
+    "Website": "https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/troubleshoot-microsoft-defender-antivirus?view=o365-worldwide",
     "1000": "Malwareprotection scan started",
     "1001": "Malwareprotection scan completed",
     "1002": "Malwareprotection scan cancelled",
