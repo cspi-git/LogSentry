@@ -4,7 +4,7 @@ import hashlib
 import base64
 import time
 
-ignore_list = [1151]
+ignore_list = []
 stored_events = []
 
 class colors:
@@ -26,7 +26,7 @@ class colors:
 def Watch():
     try:
         result = subprocess.run(
-            ["wevtutil", "qe", "Microsoft-Windows-Windows Defender/Operational", "/c:1", "/rd:true", "/f:text"],
+            ["wevtutil", "qe", "Windows PowerShell", "/c:1", "/rd:true", "/f:text"],
             capture_output=True,
             text=True,
             check=True
@@ -45,7 +45,7 @@ def Watch():
         if int(event_id) in ignore_list:
             return "Retrieved event is in the ignore list."
 
-        winevent_parser.Parser(latest_event).WindowsDefender()
+        winevent_parser.Parser(latest_event).WindowsPowerShell()
         return latest_event
 
     except subprocess.CalledProcessError as e:

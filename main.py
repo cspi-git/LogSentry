@@ -1,5 +1,6 @@
 import watchers.windowsdefender as WindowsDefender
 import watchers.windowsfirewall as WindowsFirewall
+import watchers.powershell as PowerShell
 import os, sys, time
 import threading
 from term_image.image import from_file
@@ -12,7 +13,8 @@ def clear():
 
 watching_config = {
     "WindowsDefender": False,
-    "WindowsFirewall": False
+    "WindowsFirewall": False,
+    "PowerShell": False
 }
 
 class colors:
@@ -63,6 +65,8 @@ def mon(key):
                 WindowsDefender.Watch()
             elif key == "WindowsFirewall":
                 WindowsFirewall.Watch()
+            elif key == "PowerShell":
+                PowerShell.Watch()
             else:
                 print(f"{colors.red}Invalid watcher!{colors.reset}")
                 break
@@ -85,7 +89,8 @@ def main():
         print(colors.blue + "\n\n" + divider + " | LogSentry Watching | " + divider + colors.reset)
         print(f"{colors.blue}1. Windows Defender: " + str(watching_config["WindowsDefender"]) + f"{colors.reset}")
         print(f"{colors.blue}2. Windows Firewall: " + str(watching_config["WindowsFirewall"]) + f"{colors.reset}")
-        print(f"{colors.blue}3. Start LogSentry{colors.reset}")
+        print(f"{colors.blue}3. PowerShell: " + str(watching_config["PowerShell"]) + f"{colors.reset}")
+        print(f"{colors.blue}4. Start LogSentry{colors.reset}")
 
         choice = input("\nEnter your choice: ")
         if choice == "1":
@@ -93,6 +98,8 @@ def main():
         elif choice == "2":
             watching_config["WindowsFirewall"] = not watching_config["WindowsFirewall"]
         elif choice == "3":
+            watching_config["PowerShell"] = not watching_config["PowerShell"]
+        elif choice == "4":
             threads = []
 
             for key,value in watching_config.items():
