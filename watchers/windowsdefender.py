@@ -4,7 +4,7 @@ import hashlib
 import base64
 import time
 
-ignore_list = [1151]
+ignore_list = [1151, 2000, 1150]
 stored_events = []
 
 class colors:
